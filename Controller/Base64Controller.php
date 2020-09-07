@@ -33,7 +33,7 @@ class Base64Controller extends ContainerAware
 
     public function base64Action()
     {
-        $query = $this->container->get('request')->server->get('QUERY_STRING');
+        $query = $this->container->get('request_stack')->getCurrentRequest()->server->get('QUERY_STRING');
         $datas = preg_split('([;,]{1})', $query);
 
         return new Response(base64_decode($datas[2]), 200, array('Content-Type' => $datas[0]));

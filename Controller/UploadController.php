@@ -24,7 +24,7 @@ class UploadController extends ContainerAware
 {
     public function uploadAction()
     {
-        $handle = $this->container->get('request')->files->get('Filedata');
+        $handle = $this->container->get('request_stack')->getCurrentRequest()->files->get('Filedata');
 
         $folder = $this->container->getParameter('genemu.form.file.folder');
         $uploadDir = $this->container->getParameter('genemu.form.file.upload_dir');
