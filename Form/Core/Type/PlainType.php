@@ -83,7 +83,7 @@ class PlainType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'genemu_plain';
     }
